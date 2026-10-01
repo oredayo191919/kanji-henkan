@@ -274,6 +274,11 @@ def rewrite_sentence(
     return result
 
 
-def load_kanji_reading(path="kanji-reading-dakuten.json"):
+from pathlib import Path
+
+
+def load_kanji_reading():
+    path = Path(__file__).parent / "kanji-reading-dakuten.json"
+
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
